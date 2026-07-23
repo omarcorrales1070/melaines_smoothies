@@ -6,6 +6,8 @@ from snowflake.snowpark.functions import col
 cnx=st.connection("snowflake")
 session= cnx.session()
 
+#changes for moving from sis to snis
+
 # Write directly to the app.
 st.title(f":cup_with_straw: Customize your Smoothie :cup_with_straw:")
 st.write(
