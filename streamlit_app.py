@@ -22,8 +22,14 @@ st.write ('The name on your smoothie will be:', name_on_order)
 
 #session = get_active_session()
 my_dataframe = session.table("smoothies.public.fruit_options").select(col('FRUIT_NAME'),col('SEARCH_ON'))
-st.dataframe(data=my_dataframe, use_container_width=True)
-st.stop()
+#st.dataframe(data=my_dataframe, use_container_width=True)
+#st.stop()
+
+# convert the snowpark dataframe to pandas dataframe para usar la funcion LOC
+
+pd_df = my_dataframe.to_pandas()
+st.dataframe(pd_df)
+st.stop
 
 ingredients_list = st.multiselect(
     'Choose up to 5 ingredients:'
